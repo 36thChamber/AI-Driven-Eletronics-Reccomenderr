@@ -12,8 +12,8 @@ This project implements a recommendation engine for an e-commerce platform, desi
 
 ## Project Structure
 
-
-recommender-system/
+```
+ecommender-system/
 ├── data/
 │   ├── amazon_reviews.csv
 │   ├── processed_amazon_reviews.csv
@@ -36,7 +36,7 @@ recommender-system/
 ├── requirements.txt
 ├── README.md
 └── run.py
-
+```
 
 ## Setup
 
@@ -51,31 +51,31 @@ recommender-system/
 
    Clone the project repository to your local machine:
 
-   bash
+   ```bash
    git clone https://github.com/your-username/recommender-system.git
    cd recommender-system
-   
+   ```
 
 2. **Install Required Packages**
 
    Install the necessary Python packages using pip:
 
-   bash
+   ```bash
    pip install -r requirements.txt
-   
+   ```
 
 3. **Prepare the Data**
 
-   - Download the dataset `https://www.kaggle.com/datasets/saurav9786/amazon-product-reviews` and place it in the `data` directory.
+   - Download the dataset `ratings_eletronics (1).csv` from `https://www.kaggle.com/datasets/saurav9786/amazon-product-reviews` and place it in the `data` directory.
    - If additional product data is available, place it in the `data` directory as well.
 
 4. **Process the Data**
 
    Run the data processing script to clean and preprocess the data:
 
-   bash
+   ```bash
    python data_processing.py
-   
+   ```
 
    This will create the `processed_amazon_reviews.csv` file used for training the model.
 
@@ -83,17 +83,17 @@ recommender-system/
 
    Execute the model training script to build and train the recommendation model:
 
-   bash
+   ```bash
    python train_model.py
-   
+   ```
 
 6. **Evaluate the Model**
 
    Run the evaluation script to assess the performance of the trained model:
 
-   bash
+   ```bash
    python evaluate_model.py
-   
+   ```
 
 ## Running the Application
 
@@ -101,9 +101,9 @@ recommender-system/
 
 To run the Flask application in development mode, use the following command:
 
-bash
+```bash
 python run.py
-
+```
 
 ### Production Server
 
@@ -111,15 +111,15 @@ For a production-ready environment, use Gunicorn to serve the Flask application:
 
 1. **Install Gunicorn**
 
-   bash
+   ```bash
    pip install gunicorn
-   
+   ```
 
 2. **Run Gunicorn**
 
-   bash
+   ```bash
    gunicorn --workers 4 run:app
-   
+   ```
 
    This command runs the application with 4 worker processes, which helps handle high traffic and improve performance.
 
@@ -131,21 +131,21 @@ Provides personalized product recommendations for a given user.
 
 - **Request Body**:
 
-  json
+  ```json
   {
     "user_id": "USER_ID"
   }
-  
+  ```
 
 - **Response**:
 
-  json
+  ```json
   [
     "PRODUCT_ID_1",
     "PRODUCT_ID_2",
     ...
   ]
-  
+  ```
 
   The response contains a list of recommended product IDs for the specified user.
 
@@ -160,9 +160,9 @@ The model is periodically retrained to incorporate new data and maintain accurac
 
 To test the API endpoint, you can use `curl` or a tool like Postman. Here’s an example using `curl`:
 
-bash
+```bash
 curl -X POST -H "Content-Type: application/json" -d '{"user_id": "A2SUAM1J3GNN3B"}' http://127.0.0.1:5000/recommend
-
+```
 
 This command sends a POST request to the `/recommend` endpoint with a user ID and retrieves recommendations.
 
@@ -181,4 +181,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any questions or support, please contact [your-email@example.com](mailto:your-email@example.com).
+For any questions or support, please contact [arturcf00@gmail.com](mailto:arturcf00@gmail.com).
